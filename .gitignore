@@ -1,1 +1,5 @@
 */objs
+*.o
+test
+s21_math.a
+

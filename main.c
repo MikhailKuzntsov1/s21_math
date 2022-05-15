@@ -15,7 +15,6 @@ void run_testcase(Suite *testcase) {
     counter_testcase++;
 
     SRunner *sr = srunner_create(testcase);
-
     srunner_set_fork_status(sr, CK_NOFORK);
     srunner_run_all(sr, CK_NORMAL);
 
@@ -38,10 +37,10 @@ void run_tests(void) {
             suite_s21_sin(),
             suite_s21_sqrt(),
             suite_s21_tan(),
-            NULL};
+            NULL
+    };
 
-    for (Suite **current_testcase = list_cases; *current_testcase != NULL;
-         current_testcase++) {
+    for (Suite **current_testcase = list_cases; *current_testcase != NULL; current_testcase++) {
         run_testcase(*current_testcase);
     }
 }
