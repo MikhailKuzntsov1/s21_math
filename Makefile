@@ -1,4 +1,4 @@
-CC=gcc
+C=gcc
 
 TARGET?=s21_math.a
 TEST_TARGET?=test_s21_math.a
