@@ -29,7 +29,7 @@ void run_tests(void) {
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
-        // suite_s21_exp(),    //
+        suite_s21_exp(),  //
         // suite_s21_fmod(),   //
         // suite_s21_floor(),  //
         // suite_s21_log(),    //
