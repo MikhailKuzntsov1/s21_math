@@ -1,6 +1,7 @@
 #ifndef S21_MATH
 #define S21_MATH
 
+#include <errno.h>
 #include <float.h>
 #include <math.h>
 #include <stdbool.h>
@@ -8,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define EPS 1e-7
 
 // sets the value to INF
 #define S21_INF (__builtin_inff())
