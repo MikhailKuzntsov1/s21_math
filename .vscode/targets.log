@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon May 16 14:45:11 2022
+# Make data base, printed on Mon May 16 18:40:19 2022
 
 # Variables
 
@@ -16,6 +16,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+ 
 # makefile (from `Makefile', line 11)
 TEST_SRC_DIR = ./tests
 # makefile (from `Makefile', line 7)
@@ -27,10 +28,11 @@ LC_CTYPE = UTF-8
 # environment
 VSCODE_LOG_NATIVE = false
 # makefile (from `Makefile', line 3)
- 
 TARGET = s21_math.a
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 1)
+C = gcc
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -60,7 +62,7 @@ TST_CFLAGS := -g -c -Wall -Wextra -std=c11
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00025gr000jby/T/vscode-ipc-da26ede0-43b2-4e80-b690-9f0840bda8e9.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00025gr000jby/T/vscode-ipc-817a4cff-5f2b-4ae6-aba5-58e75508cca7.sock
 # environment
 VSCODE_CWD = /Users/posidoni
 # makefile (from `Makefile', line 20)
@@ -68,7 +70,7 @@ TEST_SRC := ./tests/test_s21_abs.c ./tests/test_s21_acos.c ./tests/test_s21_asin
 # makefile (from `Makefile', line 30)
 RAN := ranlib
 # environment
-PATH = /Users/posidoni/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Users/posidoni/.brew/bin
+PATH = /Users/posidoni/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -133,20 +135,19 @@ LC_TERMINAL = iTerm2
 HOMEBREW_CACHE = /tmp/posidoni/Homebrew/Caches
 # environment
 SHLVL = 2
-# makefile (from `Makefile', line 1)
-CC = gcc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = posidoni
 # makefile
+ 
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 14)
 TEST_OBJ_DIR = ./tests/objs
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:CA18FAF1-5F91-441B-95A6-4672284E5963
+TERM_SESSION_ID = w0t0p0:35A127D7-2188-4E83-BCC2-63586DD776DF
 # makefile (from `Makefile', line 27)
 GCNO = $(shell find $(TEST_OBJ_DIR) -maxdepth 1 -name "*.gcno")
 # makefile (from `Makefile', line 19)
@@ -167,7 +168,6 @@ TERM_PROGRAM = iTerm.app
 TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n00025gr000jby/T/
 # automatic
 *F = $(notdir $*)
- 
 # environment
 VSCODE_IPC_HOOK = /Users/posidoni/Library/Application Support/Code/1.66.2-main.sock
 # makefile
@@ -179,7 +179,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.12888413317.12888413527.52C2C993-7C98-44E9-B8E9-738C0ED3261A
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12888413317.12888413527.F60D489D-75CB-4A3B-BD8B-6A869D56A66C
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # automatic
@@ -189,7 +189,7 @@ ASAN :=
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:CA18FAF1-5F91-441B-95A6-4672284E5963
+ITERM_SESSION_ID = w0t0p0:35A127D7-2188-4E83-BCC2-63586DD776DF
 # makefile (from `Makefile', line 35)
 STDFLAGS = -c -Wall -Wextra -std=c11 
 # environment
@@ -267,8 +267,7 @@ tests/objs%.o: ./tests%.c ./tests/s21_math_test.h
 tests/objs/test_s21_fabs.o: tests/test_s21_fabs.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_fabs'
- 
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -288,6 +287,7 @@ tests/objs/s21_cos.o: ./s21_cos.c tests/s21_math_test.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 	
 
+ 
 # Not a target:
 ./s21_fmod.c:
 #  Implicit rule search has been done.
@@ -309,7 +309,7 @@ tests/test_s21_sin.c:
 tests/objs/test_s21_abs.o: tests/test_s21_abs.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_abs'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -322,7 +322,7 @@ tests/objs/test_s21_abs.o: tests/test_s21_abs.c tests/s21_math_test.h
 # Not a target:
 tests/s21_math_test.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:40:38
+#  Last modified 2022-05-16 15:44:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -331,7 +331,7 @@ tests/s21_math_test.h:
 tests/objs/test_s21_ceil.o: tests/test_s21_ceil.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_ceil'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -372,7 +372,7 @@ tests/test_s21_fabs.c:
 tests/objs/test_s21_floor.o: tests/test_s21_floor.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_floor'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -385,7 +385,7 @@ tests/objs/test_s21_floor.o: tests/test_s21_floor.c tests/s21_math_test.h
 objs/s21_acos.o: ./s21_acos.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_acos'
-#  Last modified 2022-05-15 20:49:29
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -455,7 +455,7 @@ tests/test_s21_ceil.c:
 objs/s21_log.o: ./s21_log.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_log'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -468,7 +468,7 @@ objs/s21_log.o: ./s21_log.c s21_math.h
 tests/objs/test_s21_asin.o: tests/test_s21_asin.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_asin'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -481,7 +481,7 @@ tests/objs/test_s21_asin.o: tests/test_s21_asin.c tests/s21_math_test.h
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:49:25
+#  Last modified 2022-05-16 16:34:42
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -499,7 +499,7 @@ tests/test_s21_floor.c:
 # Not a target:
 ./s21_acos.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:18:58
+#  Last modified 2022-05-16 16:28:14
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -507,7 +507,7 @@ tests/test_s21_floor.c:
 
 tests/objs/main.o: main.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -530,7 +530,7 @@ tests/objs/s21_exp.o: ./s21_exp.c tests/s21_math_test.h
 objs/s21_atan.o: ./s21_atan.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_atan'
-#  Last modified 2022-05-15 20:51:16
+#  Last modified 2022-05-16 16:44:55
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -545,7 +545,6 @@ objs/s21_atan.o: ./s21_atan.c s21_math.h
 #  Implicit rule search has been done.
 #  Last modified 2022-05-14 18:18:58
 #  File has been updated.
- 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -553,7 +552,7 @@ objs/s21_atan.o: ./s21_atan.c s21_math.h
 # Not a target:
 tests/test_s21_asin.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:18:58
+#  Last modified 2022-05-16 16:32:19
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -562,10 +561,11 @@ tests/test_s21_asin.c:
 objs/s21_pow.o: ./s21_pow.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_pow'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
+ 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 73):
 	@$(MK) $(OBJ_DIR)
@@ -596,7 +596,7 @@ gcov_obj: Makefile
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:40:38
+#  Last modified 2022-05-16 16:28:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -605,7 +605,7 @@ Makefile:
 # Not a target:
 ./s21_atan.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:51:16
+#  Last modified 2022-05-16 16:44:54
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -613,7 +613,7 @@ Makefile:
 
 test: s21_math.a tests/objs/main.o tests/objs/test_s21_abs.o tests/objs/test_s21_acos.o tests/objs/test_s21_asin.o tests/objs/test_s21_atan.o tests/objs/test_s21_ceil.o tests/objs/test_s21_cos.o tests/objs/test_s21_exp.o tests/objs/test_s21_fabs.o tests/objs/test_s21_floor.o tests/objs/test_s21_fmod.o tests/objs/test_s21_log.o tests/objs/test_s21_pow.o tests/objs/test_s21_sin.o tests/objs/test_s21_sqrt.o tests/objs/test_s21_tan.o tests/s21_math_test.h Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 20:51:17
+#  Last modified 2022-05-16 16:47:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -636,7 +636,7 @@ tests/objs/s21_atan.o: ./s21_atan.c tests/s21_math_test.h
 tests/objs/test_s21_cos.o: tests/test_s21_cos.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_cos'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -649,7 +649,7 @@ tests/objs/test_s21_cos.o: tests/test_s21_cos.c tests/s21_math_test.h
 # Not a target:
 ./s21_pow.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:20:51
+#  Last modified 2022-05-16 16:28:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -658,7 +658,7 @@ tests/objs/test_s21_cos.o: tests/test_s21_cos.c tests/s21_math_test.h
 tests/objs/test_s21_exp.o: tests/test_s21_exp.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_exp'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -666,7 +666,6 @@ tests/objs/test_s21_exp.o: tests/test_s21_exp.c tests/s21_math_test.h
 #  commands to execute (from `Makefile', line 69):
 	@$(MK) $(TEST_OBJ_DIR)
 	$(CC) $(TST_CFLAGS) -o $@ -c $<
- 
 	
 
 tests/objs/s21_pow.o: ./s21_pow.c tests/s21_math_test.h
@@ -691,7 +690,7 @@ tests/objs/s21_pow.o: ./s21_pow.c tests/s21_math_test.h
 tests/objs/test_s21_fmod.o: tests/test_s21_fmod.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_fmod'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -718,11 +717,12 @@ tests/test_s21_cos.c:
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
 
 tests/objs/test_s21_tan.o: tests/test_s21_tan.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_tan'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -734,7 +734,7 @@ tests/objs/test_s21_tan.o: tests/test_s21_tan.c tests/s21_math_test.h
 
 s21_math.a: objs/s21_abs.o objs/s21_acos.o objs/s21_asin.o objs/s21_atan.o objs/s21_ceil.o objs/s21_cos.o objs/s21_exp.o objs/s21_fabs.o objs/s21_floor.o objs/s21_fmod.o objs/s21_log.o objs/s21_pow.o objs/s21_sin.o objs/s21_sqrt.o objs/s21_tan.o Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 20:51:16
+#  Last modified 2022-05-16 16:44:55
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -747,7 +747,7 @@ s21_math.a: objs/s21_abs.o objs/s21_acos.o objs/s21_asin.o objs/s21_atan.o objs/
 objs/s21_sqrt.o: ./s21_sqrt.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_sqrt'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -792,7 +792,7 @@ tests/test_s21_tan.c:
 objs/s21_sin.o: ./s21_sin.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_sin'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -805,7 +805,7 @@ objs/s21_sin.o: ./s21_sin.c s21_math.h
 tests/objs/test_s21_acos.o: tests/test_s21_acos.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_acos'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:34:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -827,7 +827,7 @@ tests/objs/test_s21_acos.o: tests/test_s21_acos.c tests/s21_math_test.h
 objs/s21_fabs.o: ./s21_fabs.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_fabs'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -855,7 +855,6 @@ tests/objs/s21_sqrt.o: ./s21_sqrt.c tests/s21_math_test.h
 	@$(MK) $(TEST_OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
 	
- 
 
 # Not a target:
 .DEFAULT:
@@ -866,7 +865,7 @@ tests/objs/s21_sqrt.o: ./s21_sqrt.c tests/s21_math_test.h
 tests/objs/test_s21_log.o: tests/test_s21_log.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_log'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -888,7 +887,7 @@ tests/objs/test_s21_log.o: tests/test_s21_log.c tests/s21_math_test.h
 objs/s21_abs.o: ./s21_abs.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_abs'
-#  Last modified 2022-05-15 20:49:29
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -901,7 +900,7 @@ objs/s21_abs.o: ./s21_abs.c s21_math.h
 # Not a target:
 tests/test_s21_acos.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:18:58
+#  Last modified 2022-05-16 16:32:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -910,7 +909,7 @@ tests/test_s21_acos.c:
 objs/s21_ceil.o: ./s21_ceil.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_ceil'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -933,11 +932,12 @@ tests/objs/s21_sin.o: ./s21_sin.c tests/s21_math_test.h
 tests/objs/test_s21_atan.o: tests/test_s21_atan.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_atan'
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:47:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
 #  commands to execute (from `Makefile', line 69):
 	@$(MK) $(TEST_OBJ_DIR)
 	$(CC) $(TST_CFLAGS) -o $@ -c $<
@@ -955,7 +955,7 @@ tests/objs/test_s21_atan.o: tests/test_s21_atan.c tests/s21_math_test.h
 objs/s21_floor.o: ./s21_floor.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_floor'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -985,7 +985,6 @@ clean:
 	$(RM) $(GCOV_OBJS)
 	
 
- 
 tests/objs/s21_fabs.o: ./s21_fabs.c tests/s21_math_test.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_fabs'
@@ -1011,7 +1010,7 @@ coverage: coverage.info
 tests/objs/test_s21_pow.o: tests/test_s21_pow.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_pow'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1051,7 +1050,7 @@ open:
 objs/s21_exp.o: ./s21_exp.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_exp'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1064,7 +1063,7 @@ objs/s21_exp.o: ./s21_exp.c s21_math.h
 objs/s21_asin.o: ./s21_asin.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_asin'
-#  Last modified 2022-05-15 20:49:29
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1087,7 +1086,7 @@ tests/objs/s21_abs.o: ./s21_abs.c tests/s21_math_test.h
 # Not a target:
 tests/test_s21_atan.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:40:38
+#  Last modified 2022-05-16 16:47:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1125,7 +1124,7 @@ tests/objs/s21_floor.o: ./s21_floor.c tests/s21_math_test.h
 # Not a target:
 tests/test_s21_pow.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:18:58
+#  Last modified 2022-05-16 16:28:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1134,6 +1133,7 @@ tests/test_s21_pow.c:
 # Not a target:
 tests/test_s21_log.c:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-05-14 18:39:45
 #  File has been updated.
 #  Successfully updated.
@@ -1143,11 +1143,10 @@ tests/test_s21_log.c:
 # Not a target:
 ./s21_asin.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 18:18:58
+#  Last modified 2022-05-16 16:06:43
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 tests/objs/s21_asin.o: ./s21_asin.c tests/s21_math_test.h
@@ -1173,7 +1172,7 @@ tests/objs/s21_acos.o: ./s21_acos.c tests/s21_math_test.h
 # Not a target:
 s21_math.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 20:41:32
+#  Last modified 2022-05-16 16:35:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1182,7 +1181,7 @@ s21_math.h:
 objs/s21_cos.o: ./s21_cos.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_cos'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1195,7 +1194,7 @@ objs/s21_cos.o: ./s21_cos.c s21_math.h
 tests/objs/test_s21_sqrt.o: tests/test_s21_sqrt.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_sqrt'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1216,7 +1215,7 @@ test_gcov: test_s21_math.a tests/objs/main.o tests/objs/test_s21_abs.o tests/obj
 objs/s21_fmod.o: ./s21_fmod.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_fmod'
-#  Last modified 2022-05-15 20:49:30
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1229,7 +1228,7 @@ objs/s21_fmod.o: ./s21_fmod.c s21_math.h
 tests/objs/test_s21_sin.o: tests/test_s21_sin.c tests/s21_math_test.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `/test_s21_sin'
-#  Last modified 2022-05-15 20:49:32
+#  Last modified 2022-05-16 16:34:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1251,8 +1250,7 @@ tests/objs/test_s21_sin.o: tests/test_s21_sin.c tests/s21_math_test.h
 objs/s21_tan.o: ./s21_tan.c s21_math.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `/s21_tan'
- 
-#  Last modified 2022-05-15 20:49:31
+#  Last modified 2022-05-16 16:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1284,6 +1282,6 @@ tests/test_s21_sqrt.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon May 16 14:45:11 2022
+# Finished Make data base on Mon May 16 18:40:19 2022
 
  

@@ -22,11 +22,10 @@ void run_testcase(Suite *testcase) {
 }
 void run_tests(void) {
     Suite *list_cases[] = {
-<<<<<<< HEAD
         // suite_s21_abs(),    //
-        suite_s21_acos(),   //
-        suite_s21_asin(),   //
-        // suite_s21_atan(),  //
+        suite_s21_acos(),  //
+        suite_s21_asin(),  //
+        suite_s21_atan(),  //
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
@@ -39,24 +38,6 @@ void run_tests(void) {
         // suite_s21_sqrt(),   //
         // suite_s21_tan(),    //
         NULL,
-=======
-            suite_s21_abs(),
-            suite_s21_acos(),
-            suite_s21_asin(),
-            suite_s21_atan(),
-            suite_s21_ceil(),
-            suite_s21_cos(),
-            suite_s21_fabs(),
-            suite_s21_exp(),
-            suite_s21_floor(),
-            suite_s21_fmod(),
-            suite_s21_log(),
-            suite_s21_pow(),
-            suite_s21_sin(),
-            suite_s21_sqrt(),
-            suite_s21_tan(),
-            NULL
->>>>>>> bb60ba28c2d42e897777236eed735082021cc3a9
     };
 
     for (Suite **current_testcase = list_cases; *current_testcase != NULL; current_testcase++) {
