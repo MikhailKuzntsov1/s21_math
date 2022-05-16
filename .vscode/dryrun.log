@@ -2,6 +2,7 @@ make all --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/posidoni/s21_math.h'
 mkdir -p ./objs
 gcc -c -Wall -Wextra -std=c11   -o objs/s21_abs.o -c ./s21_abs.c
+ 
 mkdir -p ./objs
 gcc -c -Wall -Wextra -std=c11   -o objs/s21_acos.o -c ./s21_acos.c
 mkdir -p ./objs
