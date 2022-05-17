@@ -23,6 +23,10 @@
         "unordered_map": "c",
         "istream": "c",
         "optional": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "s21_math_test.h": "c",
+        "math.h": "c",
+        "s21_math.h": "c",
+        "float.h": "c"
     }
 }

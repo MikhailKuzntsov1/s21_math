@@ -4,25 +4,30 @@ static long double s21_atan_pos_neg(long double magic, long double res, int mod,
 static int check_inf(double x);
 
 long double s21_atan(double x) {
-    long double res = 0.0L;
+    long double res = 0.0;
+
     const long double one_atan = 0.7853981633974480L;
 
-    int modulo_x = (s21_fabs(x) < 0);
+    int modulo_x = (s21_fabs(x) < 1.0);
 
     /* Warning! Replaced sqrt(x^2) with fabs(x) in the original formula */
-    long double magic = (S21_M_PI * s21_fabs(x)) / (2 * x);
+    long double magic = (S21_M_PI * s21_fabs(x)) / (2.0 * x);
     int special = check_inf(x);
 
-    /* Constants for atan 1.0. This case is special, Taylor series can't count this */
-    if (x == 1.0) res = one_atan;
-    if (x == -1.0) res = -one_atan;
+    if (!isfinite(x) && s21_fabs(x) > 0) {
+        return S21_M_PI_2;
+    }
 
-    if (x != 0.0 && !special && s21_fabs(x) != 1.0) {
-        for (int i = 0; i < 100; i++) {
+    /* Constants for atan 1.0. This case is special, Taylor series can't count this */
+    if (s21_ldeq(x, 1.0)) res = one_atan;
+    if (s21_ldeq(x, -1.0)) res = -one_atan;
+
+    if (!s21_ldeq(x, 0.0) && !special && !s21_ldeq(s21_fabs(res), one_atan)) {
+        for (int i = 0; i < 10000; i++) {
             if (modulo_x) {
-                res += (s21_pow(-1, i) * s21_pow(x, 1 + 2 * i)) / (1 + 2 * i);
+                res += (powl(-1.0, i) * powl(x, 1 + 2 * i)) / (1 + 2 * i);
             } else {
-                res += (s21_pow(-1, i) * s21_pow(x, (-1 - 2 * i))) / (1 + 2 * i);
+                res += (powl(-1.0, i) * powl(x, (-1 - 2 * i))) / (1 + 2 * i);
             }
         }
     }
@@ -31,14 +36,25 @@ long double s21_atan(double x) {
 }
 
 static long double s21_atan_pos_neg(long double magic, long double res, int mod, int *sp, long double x) {
-    if (!mod && res != 0.0 && !(*sp)) { res = magic - res; }
+    if (!mod && !s21_ldeq(res, 0.0) && !(*sp)) {
+        res = magic - res;
+    }
 
     if (*sp) {
-        if (x == S21_INF) {
+        if (s21_fabs(x) > 0) {
             res = S21_M_PI_2;
+            return S21_M_PI_2;
         } else {
             res = -1.0L * S21_M_PI_2;
         }
+    }
+
+    if (x > S21_M_PI_2) {
+        return S21_M_PI_2;
+    }
+
+    if (x < -1.0L * S21_M_PI_2) {
+        return -1.0L * S21_M_PI_2;
     }
 
     return res;
@@ -47,7 +63,9 @@ static long double s21_atan_pos_neg(long double magic, long double res, int mod,
 static int check_inf(double x) {
     int flag = 0;
 
-    if (!is_finite(x) && !is_nan(x)) { flag = 1; }
+    if (!is_finite(x) && !is_nan(x)) {
+        flag = 1;
+    }
 
     return flag;
 }

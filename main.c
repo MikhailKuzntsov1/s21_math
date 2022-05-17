@@ -23,19 +23,19 @@ void run_tests(void) {
     Suite *list_cases[] = {
         // suite_s21_abs(),    //
         // suite_s21_acos(),  //
-        // suite_s21_asin(),  //
-        // suite_s21_atan(),  //
+        suite_s21_asin(),   //
+        // suite_s21_atan(),   //
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
         // suite_s21_exp(),    //
         // suite_s21_fmod(),   //
         // suite_s21_floor(),  //
-        suite_s21_log(),  //
+        // suite_s21_log(),    //
         // suite_s21_pow(),    //
         // suite_s21_sin(),    //
         // suite_s21_sqrt(),   //
-        // suite_s21_tan(),  //
+        // suite_s21_tan(),    //
         NULL,
     };
 
@@ -45,20 +45,18 @@ void run_tests(void) {
 }
 
 double RandomReal(double low, double high) {
-    double d;
-
-    d = (double)rand() / ((double)RAND_MAX + 1);
+    double d = (double)rand() / ((double)RAND_MAX + 1);
     return (low + d * (high - low));
 }
 
-int RandomInteger(int low, int high) {
-    int k;
-    double d;
+// int RandomInteger(int low, int high) {
+//     int k;
+//     double d;
 
-    d = (double)rand() / ((double)RAND_MAX + 1);
-    k = (int)(d * (high - low + 1));
-    return (low + k);
-}
+//     d = (double)rand() / ((double)RAND_MAX + 1);
+//     k = (int)(d * (high - low + 1));
+//     return (low + k);
+// }
 
 double fRand(double fMin, double fMax) {
     double f = (double)rand() / RAND_MAX;

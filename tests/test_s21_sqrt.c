@@ -1,13 +1,11 @@
 #include "s21_math_test.h"
 
 START_TEST(sqrt_test_1) {
-<<<<<<< HEAD
     double x = RandomReal(10e-16, 10e+16);
-=======
-    double x = RandomReal(-1e+11, 1e+11);
->>>>>>> 71bf06a1c8a8b8d802246e4ae921a0f96bb17283
 
     if (x < 0) {
+#pragma warning "Comment this out of the production build!"
+        /* CPPLINT doesn't allow this! */
         ck_assert_ldouble_nan(s21_sqrt(x));
         ck_assert_int_eq(errno, EDOM);
         errno = 0;
@@ -48,7 +46,6 @@ START_TEST(sqrt_test_6_large) {
     ck_assert_ldouble_eq_tol(s21_sqrt(1.312e+16), sqrt(1.312e+16), 1e-6);
 }
 END_TEST
-
 
 Suite *suite_s21_sqrt(void) {
     Suite *s = suite_create("suite_s21_sqrt");
