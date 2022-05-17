@@ -9,8 +9,7 @@ int main(void) {
 void run_testcase(Suite *testcase) {
     static int counter_testcase = 1;
 
-    if (counter_testcase > 1)
-        putchar('\n');
+    if (counter_testcase > 1) putchar('\n');
     printf("%s%d%s", "CURRENT TEST: ", counter_testcase, "\n");
     counter_testcase++;
 
@@ -36,7 +35,7 @@ void run_tests(void) {
         // suite_s21_pow(),    //
         // suite_s21_sin(),    //
         // suite_s21_sqrt(),   //
-        // suite_s21_tan(),    //
+        // suite_s21_tan(),  //
         NULL,
     };
 
