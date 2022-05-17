@@ -3,6 +3,8 @@
     "files.associations": {
         "s21_math_test.h": "c",
         "s21_math.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "cerrno": "c",
+        "__locale": "c"
     }
 }

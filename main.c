@@ -35,7 +35,7 @@ void run_tests(void) {
         // suite_s21_log(),  //
         // suite_s21_pow(),    //
         // suite_s21_sin(),    //
-        // suite_s21_sqrt(),   //
+        suite_s21_sqrt(),   //
         // suite_s21_tan(),    //
         NULL,
     };
