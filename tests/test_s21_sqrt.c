@@ -1,7 +1,7 @@
 #include "s21_math_test.h"
 
 START_TEST(sqrt_test_1) {
-    double x = RandomReal(DBL_MIN, DBL_MAX);
+    double x = RandomReal(-1e+11, 1e+11);
 
     if (x < 0) {
         ck_assert_ldouble_nan(s21_sqrt(x));
