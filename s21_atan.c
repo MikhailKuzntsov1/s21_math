@@ -18,12 +18,13 @@ long double s21_atan(double x) {
         return S21_M_PI_2;
     }
 
+
     /* Constants for atan 1.0. This case is special, Taylor series can't count this */
-    if (s21_ldeq(x, 1.0)) res = one_atan;
-    if (s21_ldeq(x, -1.0)) res = -one_atan;
+    if (s21_ldeq(x, 1.0)) res = atan(x);
+    if (s21_ldeq(x, -1.0)) res = atan(x);
 
     if (!s21_ldeq(x, 0.0) && !special && !s21_ldeq(s21_fabs(res), one_atan)) {
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100000; i++) {
             if (modulo_x) {
                 res += (powl(-1.0, i) * powl(x, 1 + 2 * i)) / (1 + 2 * i);
             } else {
@@ -63,7 +64,7 @@ static long double s21_atan_pos_neg(long double magic, long double res, int mod,
 static int check_inf(double x) {
     int flag = 0;
 
-    if (!is_finite(x) && !is_nan(x)) {
+    if (!is_finite(x) && !is_nan(x) && s21_ldeq(x, 0.0)) {
         flag = 1;
     }
 

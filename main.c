@@ -23,8 +23,8 @@ void run_tests(void) {
     Suite *list_cases[] = {
         // suite_s21_abs(),    //
         // suite_s21_acos(),  //
-        suite_s21_asin(),   //
-        // suite_s21_atan(),   //
+        // suite_s21_asin(),   //
+        suite_s21_atan(),   //
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
