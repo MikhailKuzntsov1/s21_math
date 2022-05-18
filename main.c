@@ -28,14 +28,14 @@ void run_tests(void) {
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
-        // suite_s21_exp(),    //
+        suite_s21_exp(),  //
         // suite_s21_fmod(),   //
         // suite_s21_floor(),  //
         // suite_s21_log(),    //
         // suite_s21_pow(),    //
         // suite_s21_sin(),    //
         // suite_s21_sqrt(),   //
-        suite_s21_tan(),  //
+        // suite_s21_tan(),  //
         NULL,
     };
 
