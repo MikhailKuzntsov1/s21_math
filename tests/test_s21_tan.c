@@ -2,7 +2,7 @@
 
 START_TEST(tan_test_1) {
     // double x = RandomReal(-2 * M_PI, 2 * M_PI);
-    double x = M_PI_2;
+    double x = S21_M_PI_2;
     // double x = RandomReal(-1e5, 1e5);
     ck_assert_ldouble_eq_tol(s21_tan(x), tanl(x), 1e-06);
 }

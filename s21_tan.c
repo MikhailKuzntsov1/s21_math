@@ -1,8 +1,12 @@
 #include "s21_math.h"
 
 long double s21_tan(double x) {
-    if (is_nan(x) || !is_finite(x)) return S21_NAN;
-    x = fmodl(x, 2 * M_PI);
+    // TODO Remove unnecessary returns
+    if (is_nan(x) || !is_finite(x))
+        return S21_NAN;
+
+    // TODO Replace fmodl to s21_fmod or implement the "s21_fmodl" function
+    x = fmodl(x, 2 * S21_M_PI);
     return s21_sin(x) / s21_cos(x);
 }
 

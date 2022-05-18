@@ -1,6 +1,7 @@
 #include "s21_math.h"
 
 long double s21_cos(double x) {
+    // TODO Replace the comparison of doubles
     if (x == S21_NAN || x == S21_INF || x == -S21_INF) return S21_NAN;
 
     long double t, s;
@@ -20,6 +21,7 @@ long double s21_cos(double x) {
     int p = 0;
     s = 1.0;
     t = 1.0;
+    // TODO Move to constant
     while (s21_fabs(t / s) > 1e-100) {
         p++;
         t = (-t * x * x) / ((2 * p - 1) * (2 * p));

@@ -30,6 +30,7 @@
 // }
 
 long double s21_sin(double x) {
+    // TODO Remove unnecessary returns
     if (x == S21_NAN || x == S21_INF || x == -S21_INF) return S21_NAN;
 
     int m = 1;
@@ -45,10 +46,12 @@ long double s21_sin(double x) {
         m = -m;
     }
 
+    // TODO Maybe you can improve the view [Optional]
     long double t, s;
     s = (long double)x;
     t = (long double)x;
     int p = 0;
+    // TODO Replace to constant
     while (s21_fabs(t / s) > 1e-100) {
         p++;
         t = (-t * x * x) / ((2.0 * p + 1) * (2.0 * p));

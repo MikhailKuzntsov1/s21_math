@@ -1,6 +1,7 @@
 #include "s21_math.h"
 
 long double s21_exp(double x) {
+    // TODO Remove unnecessary returns
     // Error handling
     if (x == S21_NAN) return S21_NAN;
     if (x == -S21_INF) return 0;
@@ -12,6 +13,7 @@ long double s21_exp(double x) {
     long double arg = (long double)x;
     s = (long double)1;
     t = (long double)1;
+    // TODO Replace to constant
     while (s21_fabs(t / s) > 1e-100) {
         p++;
         t = (t * arg) / p;
