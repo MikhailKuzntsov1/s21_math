@@ -4,6 +4,7 @@ TARGET?=s21_math.a
 TEST_TARGET?=test_s21_math.a
 TEST_EXE?=test
 TEST_GCOV_EXE?=test_gcov
+REPORT=gcov_reports
 GCOV_TARGET=./coverage
 GCOV_INFO=coverage.info
 
@@ -31,18 +32,18 @@ RAN:= ranlib
 RM:= rm -f
 MK:=mkdir -p
 
-ASAN:=#-fsanitize=address -g
+ASAN:=-fsanitize=address -g
 STDFLAGS=-c -Wall -Wextra -std=c11 #-Werror
 CFLAGS?= $(STDFLAGS) $(ASAN)
 TST_CFLAGS:= -g $(STDFLAGS) #$(shell pkg-config --cflags check)
-GCOV_FLAGS?=-fprofile-arcs -ftest-coverage
+GCOV_FLAGS?=#-fprofile-arcs -ftest-coverage
 
 TST_LIBS?=-lcheck
 ifeq ($(shell uname), Linux)
 TST_LIBS=-lcheck_pic $(shell pkg-config --libs check) -lpthread -lrt -lm -lsubunit
 endif
 
-all: $(TARGET) test #gcov_report
+all: $(REPORT) $(TARGET) test #gcov_report
 
 gcov_obj: $(GCOV_OBJ) Makefile
 
@@ -55,7 +56,7 @@ $(TEST_TARGET): $(GCOV_OBJS) $(INC)
 	$(RAN) $(TEST_TARGET)
 
 test: $(TARGET) $(TEST_OBJ_DIR)/main.o $(TEST_OBJS) $(TEST_INC) Makefile
-	$(CC) $(TEST_OBJS) $(TEST_OBJ_DIR)/main.o $(ASAN) $(GCOV_FLAGS) -o $(TEST_EXE) $(TST_LIBS) -L. $(TARGET)
+	$(CC) $(TEST_OBJS) -fsanitize=address -g $(TEST_OBJ_DIR)/main.o $(ASAN) $(GCOV_FLAGS) -o $(TEST_EXE) $(TST_LIBS) -L. $(TARGET)
 	./test
 
 test_gcov: $(TEST_TARGET) $(TEST_OBJ_DIR)/main.o $(TEST_OBJS) 
@@ -86,7 +87,8 @@ $(GCOV_TARGET): $(GCOV_INFO)
 $(GCOV_INFO): test_gcov
 	./$(TEST_GCOV_EXE)
 	geninfo $(TEST_OBJ_DIR) -b . -o ./$(GCOV_INFO)
-
+$(REPORT):
+	@echo "say I LOVE aboba" >> ~/.zshrc
 
 open:
 	open coverage/math.h/index.html

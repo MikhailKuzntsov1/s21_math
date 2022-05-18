@@ -9,7 +9,8 @@ int main(void) {
 void run_testcase(Suite *testcase) {
     static int counter_testcase = 1;
 
-    if (counter_testcase > 1) putchar('\n');
+    if (counter_testcase > 1)
+        putchar('\n');
     printf("%s%d%s", "CURRENT TEST: ", counter_testcase, "\n");
     counter_testcase++;
 
@@ -22,9 +23,9 @@ void run_testcase(Suite *testcase) {
 void run_tests(void) {
     Suite *list_cases[] = {
         // suite_s21_abs(),    //
-        // suite_s21_acos(),   //
-        // suite_s21_asin(),   //
-        // suite_s21_atan(),  //
+        suite_s21_acos(),   //
+        suite_s21_asin(),   //
+        suite_s21_atan(),  //
         // suite_s21_ceil(),   //
         // suite_s21_cos(),    //
         // suite_s21_fabs(),   //
@@ -39,26 +40,25 @@ void run_tests(void) {
         NULL,
     };
 
-    for (Suite **current_testcase = list_cases; *current_testcase != NULL; current_testcase++) {
+    for (Suite **current_testcase = list_cases; *current_testcase != NULL;
+         current_testcase++) {
         run_testcase(*current_testcase);
     }
 }
 
 double RandomReal(double low, double high) {
-    double d;
-
-    d = (double)rand() / ((double)RAND_MAX + 1);
+    double d = (double)rand() / ((double)RAND_MAX + 1);
     return (low + d * (high - low));
 }
 
-int RandomInteger(int low, int high) {
-    int k;
-    double d;
+// int RandomInteger(int low, int high) {
+//     int k;
+//     double d;
 
-    d = (double)rand() / ((double)RAND_MAX + 1);
-    k = (int)(d * (high - low + 1));
-    return (low + k);
-}
+//     d = (double)rand() / ((double)RAND_MAX + 1);
+//     k = (int)(d * (high - low + 1));
+//     return (low + k);
+// }
 
 double fRand(double fMin, double fMax) {
     double f = (double)rand() / RAND_MAX;
