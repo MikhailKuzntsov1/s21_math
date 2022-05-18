@@ -31,31 +31,27 @@
 
 long double s21_sin(double x) {
     // TODO Remove unnecessary returns
-    if (x == S21_NAN || x == S21_INF || x == -S21_INF) return S21_NAN;
+    if (is_nan(x) || !is_finite(x)) return S21_NAN;
 
-    int m = 1;
+    int sign = 1;
     x = s21_fmod(x, 2 * S21_M_PI);
 
     if (x > (S21_M_PI / 2.0) && x <= S21_M_PI) {
         x = S21_M_PI - x;
     } else if (x > S21_M_PI && x <= S21_M_PI * 3.0 / 2.0) {
         x = (x - S21_M_PI);
-        m = -m;
+        sign = -sign;
     } else if (x > (S21_M_PI * 3.0) / 2.0 && x <= 2.0 * S21_M_PI) {
         x = 2 * S21_M_PI - x;
-        m = -m;
+        sign = -sign;
     }
 
-    // TODO Maybe you can improve the view [Optional]
-    long double t, s;
-    s = (long double)x;
-    t = (long double)x;
-    int p = 0;
+    long double sum = (long double)x;
+    long double tailor = (long double)x;
     // TODO Replace to constant
-    while (s21_fabs(t / s) > 1e-100) {
-        p++;
-        t = (-t * x * x) / ((2.0 * p + 1) * (2.0 * p));
-        s += t;
+    for (int p = 1; s21_fabs(tailor / sum) > 1e-100; p++) {
+        tailor = (-tailor * x * x) / ((2.0 * p + 1) * (2.0 * p));
+        sum += tailor;
     }
-    return s * m;
+    return sum * sign;
 }
