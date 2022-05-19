@@ -30,7 +30,6 @@
 // }
 
 long double s21_sin(double x) {
-    // TODO Remove unnecessary returns
     if (is_nan(x) || !is_finite(x)) return S21_NAN;
 
     int sign = 1;
@@ -48,7 +47,7 @@ long double s21_sin(double x) {
 
     long double sum = (long double)x;
     long double tailor = (long double)x;
-    // TODO Replace to constant
+
     for (int p = 1; s21_fabs(tailor / sum) > 1e-100; p++) {
         tailor = (-tailor * x * x) / ((2.0 * p + 1) * (2.0 * p));
         sum += tailor;
