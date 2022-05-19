@@ -27,6 +27,9 @@
         "s21_math_test.h": "c",
         "math.h": "c",
         "s21_math.h": "c",
-        "float.h": "c"
+        "float.h": "c",
+        "ratio": "cpp",
+        "semaphore": "cpp",
+        "utility": "cpp"
     }
 }

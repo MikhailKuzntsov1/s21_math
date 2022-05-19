@@ -2,7 +2,7 @@
 #include "s21_math.h"
 
 long double s21_fast_pow(long double base, long long int exp) {
-    long double res;
+    long double res;    
     if (exp >= 0) {
         res = 1;
         while (exp) {
@@ -38,6 +38,7 @@ long double s21_pow(double base, double exp) {
     // If base is zero and exp is zero, a domain error may occur.
     if (fabs(base) < EPS && fabs(exp) < EPS) {
         // TODO CHANGE ERROR
+        printf("2 \n");
         return S21_NAN;
     }
 
@@ -108,6 +109,7 @@ long double s21_pow(double base, double exp) {
 
     // 12 pow(base, exp) returns NaN and raises FE_INVALID if base is finite and negative and exp is finite and non-integer.
     if (b_f && base < -EPS && e_f && !e_i) {
+        printf("HERE \n");
         return S21_NAN;
     }
 
@@ -165,7 +167,6 @@ long double s21_pow(double base, double exp) {
         return S21_NAN;
     }
 
-
     if (exp > EPS) {
         if (e_i) {
             res = s21_fast_pow(base, exp);
@@ -182,9 +183,3 @@ long double s21_pow(double base, double exp) {
 
     return res;
 }
-
-// int main() {
-//     long double base = 16;
-//     long double exp = -3.24;
-//     printf("%Lf\n%Lf", s21_pow(base, exp), powl(base, exp));
-// }
