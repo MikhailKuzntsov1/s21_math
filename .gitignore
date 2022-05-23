@@ -4,7 +4,9 @@ objs
 *.o
 test
 s21_math.a
-
+.vscode
+.vs
+.vsc
 
 # Prerequisites
 *.d
@@ -58,6 +60,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-.vscode
-.vsc
-.vs
